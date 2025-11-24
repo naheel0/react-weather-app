@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';// eslint-disable-line no-unused-vars
 
 export default function App() {
   const [weather, setWeather] = useState(null);
@@ -251,7 +251,7 @@ export default function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`min-h-screen bg-gradient-to-br ${weather ? getGradient(weather.current.weather_code) : 'from-blue-400 to-blue-600'} transition-all duration-1000 py-8 px-4 relative overflow-hidden`}
+      className={`min-h-screen bg-linear-to-br ${weather ? getGradient(weather.current.weather_code) : 'from-blue-400 to-blue-600'} transition-all duration-1000 py-8 px-4 relative overflow-hidden`}
     >
       {/* Animated Background Particles */}
       {weather && <WeatherParticles weatherCode={weather.current.weather_code} />}
@@ -267,7 +267,7 @@ export default function App() {
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-blue-500 to-blue-700 p-8 text-white relative overflow-hidden"
+          className="bg-linear-to-r from-blue-500 to-blue-700 p-8 text-white relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-white/10"></div>
           <motion.div 
@@ -441,7 +441,7 @@ export default function App() {
                       animate="visible"
                       whileHover="hover"
                       transition={{ delay: index * 0.1 + 0.6 }}
-                      className="text-center p-4 rounded-xl bg-gradient-to-br from-white to-gray-50 shadow-md"
+                      className="text-center p-4 rounded-xl bg-linear-to-br from-white to-gray-50 shadow-md"
                     >
                       <div className="text-2xl mb-2">{item.icon}</div>
                       <p className="text-sm text-gray-500 font-medium">{item.label}</p>
